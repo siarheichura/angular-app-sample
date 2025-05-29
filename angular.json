@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "agent-chat-front:build:production"
+              "buildTarget": "angular-app-sample:build:production"
             },
             "development": {
-              "buildTarget": "agent-chat-front:build:development"
+              "buildTarget": "angular-app-sample:build:development"
             }
           },
           "defaultConfiguration": "development"

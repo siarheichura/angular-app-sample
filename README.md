@@ -11,11 +11,22 @@
 
 ### 🚀 Init
 
-- run `npm run init`
+- run `npm run init <project name> <prefix>`
 - run `npm install`
 - remove `init` command from `package.json`
 - remove `tools/init-project.js`
+- create GitHub repo and set remote
+  ```
+  git remote set-url origin https://github.com/<username>/<reponame>.git
+  git push -u origin master (or main)
+  ```
+- confirm that git remote is set up correctly
+  ```
+  git remote -v
+  ```
+- setup Prettier, ESLint and Stylelint according to steps below
 - replace README.md content with your own
+- remove `images` folder
 
 ---
 
@@ -31,7 +42,7 @@
 <details>
   <summary>🎆 Screenshot</summary>
     
-  <img src="src/images/prettier.png" width="500" alt="img" />
+  <img src="images/prettier.png" width="500" alt="img" />
 </details>
 
 ---
@@ -48,7 +59,7 @@
 <details>
   <summary>🎆 Screenshot</summary>
 
-  <img src="src/images/eslint.png" width="500" alt="img" />
+  <img src="images/eslint.png" width="500" alt="img" />
 </details>
 
 ---
@@ -65,7 +76,7 @@
 <details>
   <summary>🎆 Screenshot</summary>
 
-  <img src="src/images/stylelint.png" width="500" alt="img" />
+  <img src="images/stylelint.png" width="500" alt="img" />
 </details>
 
 ---

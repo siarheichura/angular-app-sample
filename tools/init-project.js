@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const readline = require('readline');
 
 const oldName = 'angular-app-sample';
 const newName = process.argv[2];
@@ -59,3 +60,26 @@ try {
 }
 
 console.log(`🎉 Done 🎉`);
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question('🧹 Do you want to delete the /tools folder? (y/N) ', (answer) => {
+  rl.close();
+  const normalized = answer.trim().toLowerCase();
+
+  if (normalized === 'y' || normalized === 'yes') {
+    const toolsPath = path.join(__dirname, '../tools');
+    try {
+      fs.rmSync(toolsPath, { recursive: true, force: true });
+
+      console.log('✅ /tools folder deleted');
+    } catch (err) {
+      console.error('❌ Failed to delete /tools:', err.message);
+    }
+  } else {
+    console.log('ℹ️  Skipped deleting /tools');
+  }
+});
